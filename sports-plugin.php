@@ -97,7 +97,6 @@ function anjani_custom_posttypes() {
     'has_archive'       => true,
     'heirarchical'      => false,
     'supports'          => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'),
-    'taxonomies'        => array('career_type','income_range'),
     'show_in_rest'      => true
   );
 
@@ -126,27 +125,64 @@ function anjani_custom_taxonomies() {
 
   /* Type of Career*/
 
-  register_taxonomy(
-    'career_type',
-    'careers',
-    array(
-      'label'         => 'Career Type',
-      'rewrite'       => array('slug' => 'career-type'),
-      'hierarchical'  => true
-    )
-  );
+  $labels = array(
+        'name'              => 'Career Type',
+        'singular_name'     => 'Career Type',
+        'search_items'      => 'Search Career Type',
+        'all_items'         => 'All Careers',
+        'parent_item'       => 'Parent Career',
+        'parent_item_colon' => 'Parent Career:',
+        'edit_item'         => 'Edit Career',
+        'update_item'       => 'Update Career',
+        'add_new_item'      => 'Add new career',
+        'new_item_name'     => 'New career name',
+        'menu_name'         => 'Career Type',
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'public'            => true,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'show_in_rest'      => true,
+        'show_tagcloud'     => false,
+        'query_var'         => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'career-type' ),
+    );
+
+    register_taxonomy( 'career-type', array( 'careers' ), $args );
 
   /*Income Range*/
 
-  register_taxonomy(
-    'income_range',
-    'careers',
-    array(
-      'label'         => 'Income Range',
-      'rewrite'       => array('slug' => 'income-range'),
-      'hierarchical'  => true,
-    )
-  );
+  $labels = array(
+        'name'              => 'Income Range',
+        'singular_name'     => 'Income Range',
+        'search_items'      => 'Search Income Ranges',
+        'all_items'         => 'All Income Ranges',
+        'parent_item'       => 'Parent income range',
+        'parent_item_colon' => 'Parent income range:',
+        'edit_item'         => 'Edit income range',
+        'update_item'       => 'Update income range',
+        'add_new_item'      => 'Add new income range',
+        'new_item_name'     => 'New Income Range Name',
+        'menu_name'         => 'Income Range',
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'public'            => true,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'show_in_rest'      => true,
+        'show_tagcloud'     => false,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'income-range' ),
+    );
+
+    register_taxonomy( 'income-range', array( 'careers' ), $args );
 
 }
 
