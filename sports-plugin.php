@@ -57,7 +57,7 @@ function anjani_custom_posttypes() {
       'capability_type'   => 'post',
       'has_archive'       => true,
       'heirarchical'      => false,
-      'supports'          => array('tittle', 'editor', 'thumbnail', 'excerpt'),
+      'supports'          => array('title', 'editor', 'thumbnail', 'excerpt'),
       'taxonomies'        => array('category', 'post-tag'),
       'show_in_rest'      => true
     );
@@ -87,6 +87,7 @@ function anjani_custom_posttypes() {
     'public'            => true,
     'publicly_queryable'=> true,
     'show_ui'           => true,
+    'show_admin_column' => true,
     'show_in_menu'      => true,
     'menu_position'     => 6,
     'menu_icon'         => 'dashicons-awards',
@@ -95,8 +96,8 @@ function anjani_custom_posttypes() {
     'capability_type'   => 'post',
     'has_archive'       => true,
     'heirarchical'      => false,
-    'supports'          => array('tittle', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'),
-    'taxonomies'        => array('category', 'post-tag'),
+    'supports'          => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'),
+    'taxonomies'        => array('career_type','income_range'),
     'show_in_rest'      => true
   );
 
@@ -118,3 +119,35 @@ function my_rewrite_flush() {
     flush_rewrite_rules();
 }
 register_activation_hook( __FILE__, 'my_rewrite_flush' );
+
+/* Custom Taxonomies */
+
+function anjani_custom_taxonomies() {
+
+  /* Type of Career*/
+
+  register_taxonomy(
+    'career_type',
+    'careers',
+    array(
+      'label'         => 'Career Type',
+      'rewrite'       => array('slug' => 'career-type'),
+      'hierarchical'  => true
+    )
+  );
+
+  /*Income Range*/
+
+  register_taxonomy(
+    'income_range',
+    'careers',
+    array(
+      'label'         => 'Income Range',
+      'rewrite'       => array('slug' => 'income-range'),
+      'hierarchical'  => true,
+    )
+  );
+
+}
+
+add_action('init', 'anjani_custom_taxonomies');
