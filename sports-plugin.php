@@ -154,7 +154,7 @@ function anjani_custom_taxonomies() {
 
     register_taxonomy( 'career-type', array( 'careers' ), $args );
 
-  /*Income Range*/
+  /* Income Range */
 
   $labels = array(
         'name'              => 'Income Range',
@@ -184,6 +184,65 @@ function anjani_custom_taxonomies() {
 
     register_taxonomy( 'income-range', array( 'careers' ), $args );
 
+      /* Location */
+
+      $labels = array(
+            'name'              => 'Location',
+            'singular_name'     => 'Location',
+            'search_items'      => 'Search Location',
+            'all_items'         => 'All Locations',
+            'parent_item'       => 'Parent Location',
+            'parent_item_colon' => 'Parent Location:',
+            'edit_item'         => 'Edit Location',
+            'update_item'       => 'Update Location',
+            'add_new_item'      => 'Add new Location',
+            'new_item_name'     => 'New Location Name',
+            'menu_name'         => 'Location',
+        );
+
+        $args = array(
+            'hierarchical'      => true,
+            'labels'            => $labels,
+            'public'            => true,
+            'show_ui'           => true,
+            'show_admin_column' => true,
+            'show_in_rest'      => true,
+            'show_tagcloud'     => false,
+            'query_var'         => true,
+            'rewrite'           => array( 'slug' => 'location' ),
+        );
+
+        register_taxonomy( 'location', array( 'careers' ), $args );
+
+          /* Income Range */
+
+          $labels = array(
+                'name'              => 'Income Range',
+                'singular_name'     => 'Income Range',
+                'search_items'      => 'Search Income Ranges',
+                'all_items'         => 'All Income Ranges',
+                'parent_item'       => 'Parent income range',
+                'parent_item_colon' => 'Parent income range:',
+                'edit_item'         => 'Edit income range',
+                'update_item'       => 'Update income range',
+                'add_new_item'      => 'Add new income range',
+                'new_item_name'     => 'New Income Range Name',
+                'menu_name'         => 'Income Range',
+            );
+
+            $args = array(
+                'hierarchical'      => true,
+                'labels'            => $labels,
+                'public'            => true,
+                'show_ui'           => true,
+                'show_admin_column' => true,
+                'show_in_rest'      => true,
+                'show_tagcloud'     => false,
+                'query_var'         => true,
+                'rewrite'           => array( 'slug' => 'income-range' ),
+            );
+
+            register_taxonomy( 'income-range', array( 'careers' ), $args );
 }
 
 add_action('init', 'anjani_custom_taxonomies');
