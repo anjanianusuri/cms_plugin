@@ -214,7 +214,7 @@ function anjani_custom_taxonomies() {
 
         register_taxonomy( 'location', array( 'careers' ), $args );
 
-          /* Income Range */
+          /* Application Close  */
 
           $labels = array(
                 'name'              => 'Income Range',
