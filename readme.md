@@ -1,6 +1,6 @@
 # Sporty Plugin
 
-This is a repository of a custom posts and taxonomies plugin for the website: anjania.sgedu.site/sporty.
+This is a repository of a custom posts and taxonomies plugin for the website: anjania.sgedu.site/sporty. We also added some sample template file for the theme: doo
 
 ### Prerequisites
 
