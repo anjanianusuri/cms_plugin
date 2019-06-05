@@ -6,7 +6,7 @@ Tested up to: 5.11
 Requires PHP: 5
 License: GPL2
 
-Our plugin is for websites that are in the field of sports which need custom posts and taxonomies for adding new sports and careers. This plugin helps you build posts for careers and sports with their appropriate taxonomies
+This is a custom plugin built for the website: anjania.sgedu.site/sporty. It allows the admin to create custom posts and taxonomies based on the site requirements. 
 
 == Installation ==
 1. Go to your WordPress Dashboard and click on \"Plugins\" on your menu

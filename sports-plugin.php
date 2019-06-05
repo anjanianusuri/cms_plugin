@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Sports Plugin
+Plugin Name: Sporty Plugin
 Plugin URI:  http://localhost/wordpress
 Description: Basic WordPress Plugin Header Comment
 Version:     1.0
@@ -10,46 +10,38 @@ Text Domain: wporg
 Domain Path: /languages
 License:     GPL2
 
-{Plugin Name} is free software: you can redistribute it and/or modify
+Sporty Plugin is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 2 of the License, or
 any later version.
 
-{Plugin Name} is distributed in the hope that it will be useful,
+Sporty Plugin is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with {Plugin Name}. If not, see {License URI}.
+along with Sporty. If not, see GPL2.
 */
-
-function test_plugin_setup_menu(){
-        add_menu_page( 'Test Plugin Page', 'Test Plugin', 'manage_options', 'test-plugin', 'test_init' );
-}
-
-function test_init(){
-        echo "<h1>Hello World!</h1>";
-}
 
 function anjani_custom_posttypes() {
 
-    // Sports Post type
+    // Coaches Post type
 
     $labels = array(
-      'name'              => 'Sports',
-      'singular_name'     => 'Sport',
-      'menu_name'         => 'Sports',
-      'new_admin_bar'     => 'Sport',
+      'name'              => 'Coaches',
+      'singular_name'     => 'Coach',
+      'menu_name'         => 'Coaches',
+      'new_admin_bar'     => 'Coach',
       'add_new'           => 'Add New',
-      'new_item'          => 'Add New Sport',
-      'edit_item'         => 'Edit Sport',
-      'view_item'         => 'Edit Sport',
-      'all_items'         => 'All Sports',
-      'search_item'       => 'Search Sports',
-      'parent_item_colon' => 'Parent Sports',
-      'not_found'         => 'No sports found.',
-      'not_found_in_trash'=> 'No sports found in Trash.',
+      'new_item'          => 'Add New Coach',
+      'edit_item'         => 'Edit Coach',
+      'view_item'         => 'Edit Coach',
+      'all_items'         => 'All Coaches',
+      'search_item'       => 'Search Coaches',
+      'parent_item_colon' => 'Parent Coach',
+      'not_found'         => 'No Coaches found.',
+      'not_found_in_trash'=> 'No Coaches found in Trash.',
     );
 
     $args = array(
@@ -61,16 +53,16 @@ function anjani_custom_posttypes() {
       'menu_position'     => 5,
       'menu_icon'         => 'dashicons-sos',
       'query_var'         => true,
-      'rewrite'           => array('slug' => 'sports'),
+      'rewrite'           => array('slug' => 'coaches'),
       'capability_type'   => 'post',
       'has_archive'       => true,
       'heirarchical'      => false,
       'supports'          => array('title', 'editor', 'thumbnail', 'excerpt'),
-      'taxonomies'        => array('category', 'post-tag'),
+      'taxonomies'        => array('post-tag'),
       'show_in_rest'      => true
     );
 
-    register_post_type('sports', $args);
+    register_post_type('coaches', $args);
 
   // Careers Post Type
 
@@ -130,6 +122,66 @@ register_activation_hook( __FILE__, 'my_rewrite_flush' );
 /* Custom Taxonomies */
 
 function anjani_custom_taxonomies() {
+
+  /* Location for Coaches */
+
+  $labels = array(
+        'name'              => 'Location',
+        'singular_name'     => 'Location',
+        'search_items'      => 'Search Location',
+        'all_items'         => 'All Locations',
+        'parent_item'       => 'Parent Location',
+        'parent_item_colon' => 'Parent Location:',
+        'edit_item'         => 'Edit Location',
+        'update_item'       => 'Update Location',
+        'add_new_item'      => 'Add new Location',
+        'new_item_name'     => 'New Location Name',
+        'menu_name'         => 'Location',
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'public'            => true,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'show_in_rest'      => true,
+        'show_tagcloud'     => false,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'location-sport' ),
+    );
+
+    register_taxonomy( 'location-sport', array( 'coaches' ), $args );
+
+    /* Type of Sport */
+
+    $labels = array(
+          'name'              => 'Sport Types',
+          'singular_name'     => 'Sport Type',
+          'search_items'      => 'Search Sport Type',
+          'all_items'         => 'All Sport Types',
+          'parent_item'       => 'Parent Sport Type',
+          'parent_item_colon' => 'Parent Sport Type:',
+          'edit_item'         => 'Edit Sport Type',
+          'update_item'       => 'Update Sport Type',
+          'add_new_item'      => 'Add new Sport Type',
+          'new_item_name'     => 'New Sport Type Name',
+          'menu_name'         => 'Sport Type',
+      );
+
+      $args = array(
+          'hierarchical'      => true,
+          'labels'            => $labels,
+          'public'            => true,
+          'show_ui'           => true,
+          'show_admin_column' => true,
+          'show_in_rest'      => true,
+          'show_tagcloud'     => false,
+          'query_var'         => true,
+          'rewrite'           => array( 'slug' => 'sport-type' ),
+      );
+
+      register_taxonomy( 'sport-type', array( 'coaches' ), $args );
 
   /* Type of Career*/
 
