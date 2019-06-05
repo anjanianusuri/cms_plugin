@@ -15,7 +15,3 @@ This is a repository of a custom posts and taxonomies plugin for the website: an
 ## Author
 
 * **Anjani Anusuri** - *Initial work* - [Sporty Plugin](https://github.com/cms_plugin)
-
-## License
-
-This project is licensed under the GLP2 - WordPress License

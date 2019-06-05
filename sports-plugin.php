@@ -8,7 +8,6 @@ Author:      Anjani Anusuri
 Author URI:  http://localhost/wordpress
 Text Domain: wporg
 Domain Path: /languages
-License:     GPL2
 
 Sporty Plugin is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

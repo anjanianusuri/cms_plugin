@@ -4,9 +4,8 @@ Tags: sports, careers, coaches
 Requires at least: 3.0 and above
 Tested up to: 5.11
 Requires PHP: 5
-License: GPL2
 
-This is a custom plugin built for the website: anjania.sgedu.site/sporty. It allows the admin to create custom posts and taxonomies based on the site requirements. 
+This is a custom plugin built for the website: anjania.sgedu.site/sporty. It allows the admin to create custom posts and taxonomies based on the site requirements.
 
 == Installation ==
 1. Go to your WordPress Dashboard and click on \"Plugins\" on your menu
