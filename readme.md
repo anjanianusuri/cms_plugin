@@ -12,9 +12,9 @@ This is a repository of a custom posts and taxonomies plugin for the website: an
 1. WordPress Coding standards
 2. Knowledge in HTML, CSS and PHP
 
-## Authors
+## Author
 
-* **Anjani Anusuri** - *Initial work* - [PurpleBooth](https://github.com/cms_plugin)
+* **Anjani Anusuri** - *Initial work* - [Sporty Plugin](https://github.com/cms_plugin)
 
 ## License
 
