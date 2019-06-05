@@ -24,6 +24,14 @@ You should have received a copy of the GNU General Public License
 along with {Plugin Name}. If not, see {License URI}.
 */
 
+function test_plugin_setup_menu(){
+        add_menu_page( 'Test Plugin Page', 'Test Plugin', 'manage_options', 'test-plugin', 'test_init' );
+}
+
+function test_init(){
+        echo "<h1>Hello World!</h1>";
+}
+
 function anjani_custom_posttypes() {
 
     // Sports Post type
@@ -214,35 +222,6 @@ function anjani_custom_taxonomies() {
 
         register_taxonomy( 'location', array( 'careers' ), $args );
 
-          /* Application Close  */
-
-          $labels = array(
-                'name'              => 'Income Range',
-                'singular_name'     => 'Income Range',
-                'search_items'      => 'Search Income Ranges',
-                'all_items'         => 'All Income Ranges',
-                'parent_item'       => 'Parent income range',
-                'parent_item_colon' => 'Parent income range:',
-                'edit_item'         => 'Edit income range',
-                'update_item'       => 'Update income range',
-                'add_new_item'      => 'Add new income range',
-                'new_item_name'     => 'New Income Range Name',
-                'menu_name'         => 'Income Range',
-            );
-
-            $args = array(
-                'hierarchical'      => true,
-                'labels'            => $labels,
-                'public'            => true,
-                'show_ui'           => true,
-                'show_admin_column' => true,
-                'show_in_rest'      => true,
-                'show_tagcloud'     => false,
-                'query_var'         => true,
-                'rewrite'           => array( 'slug' => 'income-range' ),
-            );
-
-            register_taxonomy( 'income-range', array( 'careers' ), $args );
 }
 
 add_action('init', 'anjani_custom_taxonomies');
